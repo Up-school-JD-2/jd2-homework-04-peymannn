@@ -118,16 +118,16 @@ public class Main {
 	private static void init(ArrayList<Customer> customers) {
 		ArrayList<Song> songs = new ArrayList<>();
 		ArrayList<Song> songs2 = new ArrayList<>();
-		Song songOne = new Song("güzel", "x ", "y", 5);
-		Song songTwo = new Song("güzel", "dddd ", "y", 5);
+		Song songOne = new Song("belalım", "arabesk", "ibo", 4);
+		Song songTwo = new Song("güzelim", "pop", "tarkan", 3);
 		songs.add(songOne);
 		songs2.add(songTwo);
-		Customer customerOne = new Customer(1, "ahmet", "x@gmail.com ");
-		Customer customerTwo = new Customer(2, "asım", "y@gmail.com ");
+		Customer customerOne = new Customer(1, "peyman", "x@gmail.com ");
+		Customer customerTwo = new Customer(2, "fatih", "y@gmail.com ");
 		customers.add(customerOne);
 		customers.add(customerTwo);
-		MusicAlbum albumOne = new MusicAlbum(1, "a", "b", new Date(System.currentTimeMillis()), songs, 1.5);
-		MusicAlbum albumTwo = new MusicAlbum(2, "ax", "bx", new Date(System.currentTimeMillis()), songs2, 2.5);
+		MusicAlbum albumOne = new MusicAlbum(1, "sevdik", "ibo", new Date(System.currentTimeMillis()), songs, 1.5);
+		MusicAlbum albumTwo = new MusicAlbum(2, "sevdalanduk", "tarkan", new Date(System.currentTimeMillis()), songs2, 2.5);
 		songOne.setAlbum(albumOne);
 		songTwo.setAlbum(albumTwo);
 		musicAlbums.add(albumOne);

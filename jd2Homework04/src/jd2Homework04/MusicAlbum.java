@@ -28,11 +28,11 @@ public class MusicAlbum {
 	private Date releaseDate; 
 	private ArrayList<Song> songs;
     public void printAlbumInfo() {
-    	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss"); 
+    	SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy"); 
     	   System.out.println("album id: " + id);
 	        System.out.println("albumName: " + albumName);
             System.out.println("artistName: " + artistName);
-            System.out.println("price: " + price);
+            System.out.println("price:" + price+ " TL");
             System.out.println("releaseDate: " + formatter.format(releaseDate));
             System.out.println("--------------");
             System.out.println("Song Info");

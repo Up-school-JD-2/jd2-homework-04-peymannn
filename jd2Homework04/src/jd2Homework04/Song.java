@@ -23,7 +23,7 @@ public class Song {
 		System.out.println("title: " + title);
         System.out.println("songClass: " + songClass);
         System.out.println("artistName: " + artistName);
-        System.out.println("length: " + length+"  minute");
+        System.out.println("length:" + length+" minute");
         System.out.println();
 		return "";
 		
