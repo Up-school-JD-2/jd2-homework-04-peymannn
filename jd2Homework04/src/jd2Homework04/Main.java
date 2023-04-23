@@ -53,7 +53,7 @@ public class Main {
 			scanner = new Scanner(System.in);
 			albumID = scanner.nextInt();
 		} while (!(albumID == 1 || albumID == 2));
-		
+
 		basket.addAlbum(musicAlbums.get(albumID - 1));
 		basketProcess();
 	}
@@ -67,21 +67,44 @@ public class Main {
 			scanner = new Scanner(System.in);
 			albumID = scanner.nextInt();
 		} while (!(albumID == 1 || albumID == 2));
-		
+
 		basket.removeAlbum(albumID);
 	}
 
 	private static void searchAlbum() {
 		Scanner scanner;
-		MusicAlbum whichAlbum;
 		int albumID = 0;
 		do {
 			System.out.println("please entry album ID for search");
 			scanner = new Scanner(System.in);
 			albumID = scanner.nextInt();
 		} while (!(albumID == 1 || albumID == 2));
-		
-		basket.searchAlbum(albumID);
+		MusicAlbum album = new MusicAlbum();
+		album.id = albumID;
+		basket.searchAlbum(album);
+	}
+
+	private static void searchAlbumName() {
+		Scanner scanner;
+		String albumName;
+		System.out.println("please entry album Name for search");
+		scanner = new Scanner(System.in);
+		albumName = scanner.next();
+		MusicAlbum album = new MusicAlbum();
+		album.setAlbumName(albumName);
+		basket.searchAlbumByAlbumName(album);
+	}
+
+	private static void searchAlbumPrice() {
+		Scanner scanner;
+		double albumPrice;
+		System.out.println("please entry album Price for search");
+		scanner = new Scanner(System.in);
+		albumPrice = scanner.nextDouble();
+		MusicAlbum album = new MusicAlbum();
+		album.setPrice(albumPrice);
+		basket.searchAlbumByPrice(album);
+
 	}
 
 	private static void basketProcess() {
@@ -98,11 +121,21 @@ public class Main {
 			selectAlbum();
 		} else if (choose == 2) {
 			removeAlbum();
-			;
 			basketProcess();
 		} else if (choose == 3) {
-			searchAlbum();
+			System.out.println(
+					"for search Album with ID : 1 \nfor search Album with Name : 2 \nfor search Album with Price : 3 \n");
+			scanner = new Scanner(System.in);
+			int searchChoose = scanner.nextInt();
+			if (searchChoose == 1) {
+				searchAlbum();
+			} else if (searchChoose == 2) {
+				searchAlbumName();
+			} else if (searchChoose == 3) {
+				searchAlbumPrice();
+			}
 			basketProcess();
+
 		} else if (choose == 4) {
 			basket.printBasketInfo();
 			basketProcess();
@@ -127,7 +160,8 @@ public class Main {
 		customers.add(customerOne);
 		customers.add(customerTwo);
 		MusicAlbum albumOne = new MusicAlbum(1, "sevdik", "ibo", new Date(System.currentTimeMillis()), songs, 1.5);
-		MusicAlbum albumTwo = new MusicAlbum(2, "sevdalanduk", "tarkan", new Date(System.currentTimeMillis()), songs2, 2.5);
+		MusicAlbum albumTwo = new MusicAlbum(2, "sevdalanduk", "tarkan", new Date(System.currentTimeMillis()), songs2,
+				2.5);
 		songOne.setAlbum(albumOne);
 		songTwo.setAlbum(albumTwo);
 		musicAlbums.add(albumOne);
